@@ -6,10 +6,8 @@ export const useSampleForm = () => {
   const form = useForm<FormInput>({
     defaultValues: {
       a: '',
-      numbers: {
-        b: '0',
-        c: '0',
-      },
+      b: '0',
+      c: '0',
     },
     mode: 'onChange',
     resolver: zodResolver(schema),

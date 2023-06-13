@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import InvalidSample1 from './pages/InvalidSample1';
 import InvalidSample2 from './pages/InvalidSample2';
+import Sample from './pages/Sample';
 
 import ValidSample from './pages/ValidSample';
 
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <ValidSample />,
+  },
+  {
+    path: '/sample',
+    element: <Sample />,
   },
   {
     path: '/invalid/1',

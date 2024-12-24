@@ -1,6 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { FormInput, schema } from './schema';
+import { useEffect } from 'react';
 
 export const useSampleForm = () => {
   const form = useForm<FormInput>({
@@ -14,6 +15,10 @@ export const useSampleForm = () => {
     mode: 'onChange',
     resolver: zodResolver(schema),
   });
+
+  useEffect(() => {
+    form.trigger();
+  }, []);
 
   return {
     ...form,

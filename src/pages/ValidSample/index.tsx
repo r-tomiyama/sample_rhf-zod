@@ -6,14 +6,13 @@ import { useSampleForm } from './useSampleForm';
 export default function ValidSample() {
   const {
     control,
-    formState: { isValid },
+    formState: { isValid, errors },
     submit,
     trigger,
   } = useSampleForm();
   return (
     <div>
       <h1>フォームサンプル</h1>
-
       <Input name="a" control={control} />
       <NumberInput name="numbers.b" control={control} />
       <NumberInput
@@ -22,7 +21,7 @@ export default function ValidSample() {
         trigger={trigger}
         triggerKey="numbers.b"
       />
-
+      error: {JSON.stringify(errors)}
       <div>
         <button onClick={submit} disabled={!isValid}>
           submit
